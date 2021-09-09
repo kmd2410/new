@@ -1,0 +1,10 @@
+animation composer
+ignite express
+saber 광선 / 네온효과
+duik 애니메이션 리깅 플러그인 (관절)
+color vibrance 하나의 컬러로 풍부한 컬러 지정가능
+vc reflect 반사효과 
+sure target2 카메라 제어
+fx console 단축키 입력 지정
+decompose text 텍스트를 손쉽게 분해 시켜줌
+long shadow 
