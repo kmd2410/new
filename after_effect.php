@@ -49,9 +49,35 @@
     // Text 배경과 글자색
     Tint;
 
-    // 블러.?
+    // 블러.? 색상 눈아프게조정 옛날처럼 
     CC Radial Blur; Fast Bot Blur;
 
     // Text 글자 쪼개기
     Transform, Compositing Options.......
+    
+    // 배경 그라디언트
+    gradiant ramp
+
+    // 광선, 스트로크 효과 sabar
+
+    // brush stroke
+
+    // 화면 진동효과
+    wiggle
+
+    // wiggle로 인한 화면 메꾸기
+    Motion tile
+
+    프리미어프로 전환효과
+    Pan Top left => 왼쪽으로
+    Rotate - CW => 화면돌리기
+    Zoom out => 줌 아웃효과
+    Digital Glitch => 약간 디지털방식으로 전환
+    Light Leak => 빛을 이용한 전환
+    Shake & Distort => 흔들리고 확대 ?
+    Effects/video transition/slide/slide효과패널/비디오전환/밀기/밀기 => 미는효과push사용해도됨
+    잔상남기기
+    new item/adjustment layer/새항목/조정레이어 만들고
+    directional Blur effect적용 
+
 ?>
