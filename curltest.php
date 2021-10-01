@@ -56,6 +56,24 @@
         print_r ($values->last);
       }
 
+      echo "<br>";
+      echo "<br>";
+      $arr1 = array();
+      $arr2 = array();
+
+      foreach ($bptc_data_balance as $value){
+        echo $value;
+        $arr1 = ($value);
+        foreach ($value as $key){
+          $arr2 = array('last'    => $key->last, 
+                    'low'         => $key->low,
+                    'high'            => $key->high, 
+                    'market_id'       => $key->market_id, 
+                    'time'          => $key->time 
+          );
+        }
+      }
+
 
 
 
