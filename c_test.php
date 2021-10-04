@@ -3,29 +3,25 @@
 <form class="form_data">
     <div>
         <div class="input_wrap">
-            <input type="checkbox" value="test1" name="chk" class="chk" onclick="oneCheck(this)">
-            <!-- <input type="checkbox" value="test1" name="chk[]" class="chk"> -->
+            <input type="checkbox" value="test1" name="chk[]" class="chk" onclick="oneCheck(this)">
             <span>test1</span>
         </div>
     </div>
     <div>
         <div class="input_wrap">
-            <input type="checkbox" value="test2" name="chk" class="chk" onclick="oneCheck(this)">
-            <!-- <input type="checkbox" value="test2" name="chk[]" class="chk"> -->
+            <input type="checkbox" value="test2" name="chk[]" class="chk" onclick="oneCheck(this)">
             <span>test2</span>
         </div>
     </div>
     <div>
         <div class="input_wrap">
-            <input type="checkbox" value="test3" name="chk" class="chk" onclick="oneCheck(this)">
-            <!-- <input type="checkbox" value="test3" name="chk[]" class="chk"> -->
+            <input type="checkbox" value="test3" name="chk[]" class="chk" onclick="oneCheck(this)">
             <span>test3</span>
         </div>
     </div>
     <div>
         <div class="input_wrap">
-            <input type="checkbox" value="test4" name="chk" class="chk" onclick="oneCheck(this)">
-            <!-- <input type="checkbox" value="test4" name="chk[]" class="chk"> -->
+            <input type="checkbox" value="test4" name="chk[]" class="chk" onclick="oneCheck(this)">
             <span>test4</span>
         </div>
     </div>
@@ -34,7 +30,7 @@
 </form>
 
 <script>
-	let check = $('input:checkbox[name="chk"]:checked').val();
+	// let check = $('input:checkbox[name="chk"]:checked').val();
 
     // $(".chk").click(function(){
     //     $(".chk").attr("checked", false);
@@ -106,7 +102,7 @@
 		    $.ajax({             
 		        type: "POST",          
 		        enctype: 'multipart/form-data',  
-		        url: 'checkbox_update.php',
+		        url: 'c_up.php',
 		        data: data,          
 		        processData: false,    
 		        contentType: false,      
@@ -120,8 +116,8 @@
 		        success: function (data) { 
 					$('body').html(data);           
 		            $("#submit").prop("disabled", false); 
-                    alert("성공");
-		            location.reload(true); 
+                    alert("성공", "./c_up.php");
+		            // location.reload(true); 
 		        },          
 		        error: function (e) {  
 		            console.log("ERROR : ", e);     

@@ -14,12 +14,12 @@
 
       $result_balance = curl_exec($ch);
       
-      echo $result_balance;
+      echo $result_balance; // 값 그대로
       echo "<br>";
 
       $bptc_data_balance = json_decode($result_balance,false);
 
-      print_r($bptc_data_balance);
+      print_r($bptc_data_balance); //배열형태 ?
       //var_dump($data_balance);
 
       foreach ($bptc_data_balance as $key => $value) {
@@ -31,8 +31,7 @@
         print_r($value); // array
         
         echo "<br>";
-        print $value['last'];
-        echo $value['last'];
+        
         
         // foreach ($value as $k => $v){
         //   print_r($k['last']);
