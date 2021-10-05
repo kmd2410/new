@@ -5,6 +5,8 @@
     $password = $_POST["password"];
     $email = $_POST["email"];
     $phone = $_POST["phone"];
+    $check = $_POST["check"];
+    $check_array = implode(",",$check);
 
     // echo $id.$password.$email.$phone;
 
@@ -16,7 +18,7 @@
         echo "DB연결성공<br>";
     }
 
-    $query = "INSERT INTO 20211005_table (id,password,email,phone) VALUES ('$id','$password','$email','$phone')";
+    $query = "INSERT INTO 20211005_table (id,password,email,phone,check_val) VALUES ('$id','$password','$email','$phone','$check_array')";
     $result = mysqli_query($connect,$query);
 
     echo ($result) ? "DB입력성공" : "DB입력실패";
@@ -27,5 +29,5 @@
 <!-- 아이디 kmd2410 비밀번호 a135790! 테이블네임 20211005_table-->
 <a href="./3.php">데이터 불러오기</a>
 <a href="./4.php">모든전화번호1로수정</a>
-<a href="./5.php">index3만모두3으로수정</a>
+<a href="./5.php">index3만번호1004로수정</a>
 
