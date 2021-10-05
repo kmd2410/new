@@ -6,7 +6,8 @@
     $email = $_POST["email"];
     $phone = $_POST["phone"];
     $check = $_POST["check"];
-    $check_array = implode(",",$check);
+
+    $val = implode(",",$check);
 
     // echo $id.$password.$email.$phone;
 
@@ -18,7 +19,7 @@
         echo "DB연결성공<br>";
     }
 
-    $query = "INSERT INTO 20211005_table (id,password,email,phone,check_val) VALUES ('$id','$password','$email','$phone','$check_array')";
+    $query = "INSERT INTO 20211005_table (id,password,email,phone,check_val) VALUES ('$id','$password','$email','$phone','$val')";
     $result = mysqli_query($connect,$query);
 
     echo ($result) ? "DB입력성공" : "DB입력실패";
