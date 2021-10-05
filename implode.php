@@ -101,8 +101,8 @@
 		    
 		    $.ajax({             
 		        type: "POST",          
-		        enctype: 'multipart/form-data',  
-		        url: 'c_up.php',
+		        enctype: 'multipart/form-data',
+		        url: 'implode_update.php',
 		        data: data,          
 		        processData: false,    
 		        contentType: false,      
