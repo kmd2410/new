@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script src="./jquery-3.1.1.min.js"></script>
+<style>
+    .loading{
+    width:100%;
+    height:100%;
+    position:fixed;
+    left:0px;
+    top:0px;
+    background: skyblue;
+    z-index:1000; /* 이 값으로 레이어의 위치를 조정합니다. */
+}
+
+.loader { position: absolute; left: 50%; top: 50%; z-index: 1; width: 150px; height: 150px; margin: -75px 0 0 -75px; border: 16px solid #f3f3f3; border-radius: 50%; border-top: 16px solid #3498db; width: 120px; height: 120px; -webkit-animation: spin 2s linear infinite; animation: spin 2s linear infinite; } @-webkit-keyframes spin { 0% { -webkit-transform: rotate(0deg); } 100% { -webkit-transform: rotate(360deg); } } @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+</style>
+<body onload="ffff()">
+    <!-- <div id="loading">
+        <img SRC="https://img1.daumcdn.net/thumb/R1920x0/?fname=http%3A%2F%2Fcfile1.uf.tistory.com%2Fimage%2F9950163C5AFE32810A7310">
+    </div> -->
+
+    <!-- <div id="loading" style="position: absolute; top:50%;left:50%;">
+        <img SRC="https://img1.daumcdn.net/thumb/R1920x0/?fname=http%3A%2F%2Fcfile1.uf.tistory.com%2Fimage%2F9950163C5AFE32810A7310">
+    </div> -->
+    <!-- <div class="loading" ></div>
+
+    <p>로딩완료</p> -->
+
+    <!-- <script>
+        $(window).load(function(){
+            $(".loading").fadeOut();
+        });
+    </script> -->
+
+    <div class="loader"></div>
+    <div class="container"><h1>로딩 후 화면</h1></div>
+</body>
+<script>
+    function onloadevent(){
+        $(".loading").hide();
+    }
+
+    function ffff() { 
+        $(".loader").hide();};
+
+</script>
+
+
+</html>
