@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous"></script>
+</head>
+<body>
+    
+    <textarea name="" id="test" cols="30" rows="10"></textarea>
+    <button class="test_btn">복사</button>
+</body>
+<script>
+    function copy(){
+        let obj = document.getElementById("test");
+
+        obj.select(); // input select
+        obj.setSelectionRange(0, 99999); // for mobile
+
+        document.execCommand("copy");
+        obj.setSelectionRange(0,0); //select reset
+    }
+    
+
+    $(".test_btn").click(function(){
+        copy();
+    });
+
+    
+
+
+
+
+</script>
+</html>
