@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"></script>
+    <style>
+        /* body{min-width:980px;} */
+        .main .section1{height:400px; background:#9CC;}
+        .footer{height:150px; background:#495860;} 
+        .footer .footer_inner{width:980px; height:150px; margin:0 auto; position:relative;}
+        .footer .footer_inner .family{position:absolute; right:0; top:30px;}
+        .footer .footer_inner .family button{height:28px; background:#fff url(../images/arrow_select.gif) no-repeat right top; border:1px solid #ccc; width:180px; text-align:left; text-indent:15px; font-size:14px; color:#444; outline:none;}
+        .footer .footer_inner .family .family_list{ background:#fff; width:178px; position:absolute; left:0; bottom:28px; border:1px solid #ccc;  line-height:28px; border-bottom:none; height:150px; overflow:auto; display:none; }
+        .footer .footer_inner .family .family_list a{display:block; color:#333; text-indent:10px;}
+        .footer .footer_inner .family .family_list a:hover{background:#ccc;} 
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="section1"></div>
+    </div>
+        <div class="footer">
+            <div class="footer_inner">
+                <div class="family">
+                    <button type="button">Family Site</button>
+                    <ul class="family_list">
+                        <li><a href="#" target="_blank">Family Site</a></li>
+                        <li><a href="#">site1</a></li>
+                        <li><a href="#">site2</a></li>
+                        <li><a href="#">site3</a></li>
+                        <li><a href="#">site4</a></li>
+                        <li><a href="#">site5</a></li>
+                        <li><a href="#">site6</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+
+    <script>
+
+        //문서로딩이 완료되면, 변수가 트루일때, 패밀리버튼을 클릭하면, 패밀리리스트를 보여줘라.
+        $(document).ready(function(){
+            let sw=true;
+        
+        $(".family button").click(function(){
+            sw=!sw; //부정연산자(not)을 변수값 앞에 붙여서 클릭할때마다 true, false가 되게함.
+        
+            if(sw==true){
+                $('.family .family_list').hide();
+                } else {
+                $('.family .family_list').show();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
