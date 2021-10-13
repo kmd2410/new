@@ -6,7 +6,7 @@
     function test(imageName) {
         // LoadingWithMask('./loding.gif');
         LoadingWithMask();
-        setTimeout("closeLoadingWithMask()", 800);
+        setTimeout("closeLoadingWithMask()", 1000000);
     }
 
     

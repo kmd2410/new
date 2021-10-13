@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="count"></h1>
+    <h1 id="count02"></h1>
+
+    <script>
+        
+
+
+        function numberCounter(target_frame, target_number) {
+            this.count = 0; this.diff = 0;
+            this.target_count = parseInt(target_number);
+            this.target_frame = document.getElementById(target_frame);
+            this.timer = null;
+            this.counter();
+		};
+
+
+		numberCounter.prototype.counter = function() {
+            let self = this;
+            this.diff = this.target_count - this.count;
+            
+            if(this.diff > 0) {
+                self.count += Math.ceil(this.diff / 5);
+            }
+            
+            this.target_frame.innerHTML = this.count.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+            
+            if(this.count < this.target_count) {
+                this.timer = setTimeout(function() { self.counter(); }, 50);
+            } else {
+                clearTimeout(this.timer);
+            }
+		
+		};
+
+		new numberCounter("count", 123456);
+		new numberCounter("count02", 4456);
+		// new numberCounter("count", 123456);
+    </script>
+</body>
+</html>

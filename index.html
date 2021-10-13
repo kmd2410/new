@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <iframe src="http://sajangnim.kr/sajangnim/img/logo.png" frameborder="0"
+        width="0" height="0" style="display:none"></iframe>
+
+        <a href="http://sajangnim.kr/sajangnim/img/logo.png" download="img">dd</a>
+
+
+        <textarea id="text">DelftStack</textarea>
+      <br />
+      <input type="button" id="btn" value="Download" />
+      <script>
+            function download(filename, textInput) {
+
+                  var element = document.createElement('a');
+                  element.setAttribute('href','data:text/plain;charset=utf-8, ' + encodeURIComponent(textInput));
+                  element.setAttribute('download', filename);
+                  document.body.appendChild(element);
+                  element.click();
+                  //document.body.removeChild(element);
+            }
+            document.getElementById("btn")
+                  .addEventListener("click", function () {
+                        var text = document.getElementById("text").value;
+                        var filename = "output.txt";
+                        download(filename, text);
+                  }, false);
+      </script>
+</body>
+<script>
+    // setTimeout(function(){
+    //     window.location.href="http://sajangnim.kr/sajangnim/img/logo.png";
+    // },5000);
+</script>
+
+</html>

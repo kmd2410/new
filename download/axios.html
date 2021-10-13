@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+</head>
+<body>
+    <button onclick="download();">다운로드</button>
+</body>
+<script>
+    function download() {
+        axios({
+            url: 'https://source.unsplash.com/random/500x500',
+            method: 'GET',
+            responseType: 'blob'
+            })
+            .then((response) => {
+                const url = window.URL
+                    .createObjectURL(new Blob([response.data]));
+                    const link = document.createElement('a');
+                    link.href = url;
+                    link.setAttribute('download', 'image.jpg');
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                })
+    }
+
+    // URL이 파일 소스이고 responseType이 blob인 Axios get요청을 만든다.
+    // Axios요청에서 반환된 promise를 해결
+        // Blob 객체를 나타내는 URL을 포함하는 DOMString을 만든다.
+        // createElement 속성을 사용하여 a태그를 만들고 download 및 href 속성을 할당
+        // href를 URL로 설정하고 download속성을 다운로드한 파일의 이름으로 설정
+        // 링크를 문서에 첨부하고 .click()메소드를 사용하여 시뮬
+        // 링크제거
+</script>
+</html>
