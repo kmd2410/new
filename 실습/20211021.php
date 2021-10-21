@@ -96,9 +96,23 @@ include_once $_SERVER["DOCUMENT_ROOT"]."/common.php";
     // $play = sql_query("update sw_member set mb_name = '김현성03', mb_email = 'daniel2@naver.com' where mb_id = 'test'");
 
     // ****************** 여러사람 데이터 바꾸기
-    $play = sql_query("UPDATE sw_member SET mb_name = CASE mb_id WHEN 'test' THEN '김현성04' ELSE mb_name END,
-                                            ")
+
+    // ****JOIN UNION *강력* just write val in UNION ALL SELECT
+    // $play = sql_query(
+    //     "UPDATE sw_member a JOIN (
+    //     SELECT 'test' as mb_id, '김현성05' as new_name, 'daniel2@nate.com' as new_email 
+    //     UNION ALL SELECT 'daniel1522', '김현성02', 'daniel1522@naver.com'
+    //     ) vals ON a.mb_id = vals.mb_id 
+    //     SET mb_name = new_name, mb_email = new_email"
+    //     );
+
+    // $play = sql_query("UPDATE sw_member i SET (mb_name, mb_eamil) = (SELECT mb_name, mb_eamil from )")
     
+        // $play = sql_query("UPDATE sw_member SET mb_name = CASE mb_id WHEN 'test' THEN '김현성04' ELSE mb_name END,
+        //                                     ")
+
+
+
 
 
 
@@ -106,6 +120,16 @@ include_once $_SERVER["DOCUMENT_ROOT"]."/common.php";
     //https://wakestand.tistory.com/572
     //https://shakddoo.tistory.com/entry/Mysql-Select%EA%B2%B0%EA%B3%BC%EB%A5%BC-Update-%EB%AC%B8%EC%97%90-%EB%B0%98%EC%98%81%ED%95%98%EA%B8%B0
 
+    // $play = sql_query("UPDATE sw_member SET mb_name = (SELECT a.mb_name FROM (SELECT mb_name FROM sw_member WHERE mb_id = 'test') a) WHERE mb_name = '김현성07'");
+    
+
+    // 테이블 생성
+    // $play = sql_query("CREATE TABLE 20211022_table (num int AUTO_INCREMENT primary key, id varchar(255) not null)");
+
+    // 테이블 삭제
+    // $play = sql_query("DROP TABLE 20211022_table");
+    // 테이블유지하고 내부 데이터만 삭제
+    // $play = sql_query("TRUNCATE TABLE 20211022_table");
 
     if ($play){
         echo "쿼리실행완료";
