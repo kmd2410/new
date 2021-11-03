@@ -30,5 +30,21 @@
         // 서브 쿼리 내에서 UNION(ALL)이 사용 되어야 한다
         // 한개 이상의 Non-Recurisve 문장이 포함 되어야함(첫번째 루프에서만 실행, anchor역할 이것 미만의 계층구조로 연결되어 있는것들 다 나옴)
                             
+    
+    
+    $r_no = $member["mb_recommend_no"];
+    $p = $member["mb_package"];
+    
 
+    // 추천 1회
+    // $r_no+1 = $p줘야해 
+
+    "UPDATE pd_member SET point = point+($p*0.05) WHERE mb_recommend_no = (r_no-1)"; //약간이런느낌 ?
+    "UPDATE pd_member SET point = point+($p*0.03) WHERE mb_recommend_no = (r_no-2)";
+    "UPDATE pd_member SET point = point+($p*0.02) WHERE mb_recommend_no = (r_no-3)";
+
+    // 매칭
+    "UPDATE "
+
+    
 ?>
